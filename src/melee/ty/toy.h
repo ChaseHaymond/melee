@@ -2,8 +2,15 @@
 #define GALE01_305058
 
 #include <placeholder.h>
-#include "ft/forward.h"
+// #include "sysdolphin/baselib/gobj.h"
+#include "baselib/gobj.h"
 #include "gm/types.h"
+
+typedef struct {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+} UnknownUserData;
 
 /* 305058 */ UNK_RET un_80305058(UNK_PARAMS);
 /* 3053C4 */ UNK_RET un_803053C4(UNK_PARAMS);
@@ -27,8 +34,8 @@
 /* 306954 */ UNK_RET un_80306954(UNK_PARAMS);
 /* 306A0C */ UNK_RET un_80306A0C(UNK_PARAMS);
 /* 306A48 */ UNK_RET un_80306A48(UNK_PARAMS);
-/* 306B18 */ UNK_RET un_80306B18(UNK_PARAMS);
-/* 306BB8 */ UNK_RET un_80306BB8(UNK_PARAMS);
+/* 306B18 */ HSD_GObjProc* un_80306B18(HSD_GObj* gobj, s32 anim_frame, s32 val1, s32 val2);
+/* 306BB8 */ void un_80306BB8(HSD_GObj* gobj);
 /* 306C5C */ UNK_RET un_80306C5C(UNK_PARAMS);
 /* 306CF4 */ void Toy_RemoveUserData(void*);
 /* 306D14 */ UNK_RET un_80306D14(UNK_PARAMS);

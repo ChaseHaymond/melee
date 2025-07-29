@@ -10,6 +10,7 @@
 
 #include "gm/gm_1601.h" // for gm_801677E8
 #include <MSL/math.h> // for ABS
+#include "baselib/gobjproc.h" // for HSD_GObjProc_8038FD54
 
 // Global variable definition
 f32 un_804DDCD8 = 0.0f;
@@ -95,6 +96,27 @@ float un_80305DB0(void) {
 /// #un_80306A0C
 
 /// #un_80306A48
+
+HSD_GObjProc* un_80306B18(HSD_GObj* gobj, s32 anim_frame, s32 val1, s32 val2) {
+    HSD_GObjProc* proc = NULL;
+    // void* user_data = gobj->user_data; // 100%
+    UnknownUserData* user_data = (UnknownUserData*)gobj->user_data; // 100%
+    // UnknownUserData* user_data = HSD_GObjGetUserData(gobj); // 98.47%
+
+    if (user_data != NULL) {
+        HSD_JObjClearFlagsAll(gobj->hsd_obj, 0x10);
+        HSD_JObjReqAnimAll(gobj->hsd_obj, anim_frame);
+
+        // *(s32*)((u8*)user_data + 8) = val1;  // offset 8
+        // *(s32*)((u8*)user_data + 4) = val2;  // offset 4
+        user_data->unk8 = val1;
+        user_data->unk4 = val2;
+
+        proc = HSD_GObjProc_8038FD54(gobj, un_80306BB8, 0);
+        HSD_GObj_80390CD4(gobj);
+    }
+    return proc;
+}
 
 /// #un_80306BB8
 
