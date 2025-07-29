@@ -11,6 +11,9 @@
 #include "gm/gm_1601.h" // for gm_801677E8
 #include <MSL/math.h> // for ABS
 
+// Global variable definition
+f32 un_804DDCD8 = 0.0f;
+
 /// #un_80305058
 
 /// #un_803053C4
@@ -92,8 +95,6 @@ float un_80305DB0(void) {
 /// #un_80306A0C
 
 /// #un_80306A48
-
-/// #un_80306B18
 
 /// #un_80306BB8
 
